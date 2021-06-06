@@ -9,15 +9,16 @@
         \nplannED is a simple academic planner app which gives you the opportunity to organize your academic tasks.\n
 
         \nIn the home section, you can add your courses.
+        \nThe courses are shown along with their progress bars.
         \nWhen you long click on a course, you can edit its title or delete it.
         \nWhen you click on a course you are then provided with an interface for managing the tasks for it.\n
 
         \nYou can add tasks, with their title and label (whether it is an exam, or an assignment etc).
         \nThe tasks are color coded based on their label.
-        \nEach task has a check box, and when you are done with the task you can check it and it will be deleted.
+        \nEach task has a check box, and when checked, the progress bar for the course is updated.
         \nAfterwards, if you wish you can set a deadline for a task, as well as a notification reminder.
         \nAfter setting a deadline, or marking a checkbox, you can use the refresh button to immediately apply changes.
-        \nClicking on a task will allow you to edit it.\n
+        \nClicking on a task will allow you to edit or delete it.\n
 
         \nIn the calendar section, when you click on a specific date, all the tasks for that date will be shown below.\n
 

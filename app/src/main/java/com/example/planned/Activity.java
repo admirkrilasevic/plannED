@@ -12,6 +12,16 @@ public class Activity {
 
     private String title;
 
+    private int progress;
+
+    public int getProgress() {
+        return progress;
+    }
+
+    public void setProgress(int progress) {
+        this.progress = progress;
+    }
+
     public long getId() {
         return id;
     }
@@ -36,5 +46,6 @@ public class Activity {
     public Activity(long id, String title) {
         this.id = id;
         this.title = title;
+        this.progress = 0;
     }
 }

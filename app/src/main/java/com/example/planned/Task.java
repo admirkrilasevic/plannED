@@ -29,6 +29,16 @@ public class Task {
 
     private String label;
 
+    private int completed;
+
+    public int getCompleted() {
+        return completed;
+    }
+
+    public void setCompleted(int completed) {
+        this.completed = completed;
+    }
+
     public String getLabel() {
         return label;
     }
@@ -58,6 +68,7 @@ public class Task {
         this.activityId = activityId;
         this.deadlineDate = null;
         this.deadlineTime = null;
+        this.completed = 0;
         this.label = label;
     }
 

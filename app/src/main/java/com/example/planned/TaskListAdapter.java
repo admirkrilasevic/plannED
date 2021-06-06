@@ -88,12 +88,15 @@ public class TaskListAdapter extends BaseAdapter {
         Button setReminder = convertView.findViewById(R.id.reminder_button);
         CheckBox checkBox = convertView.findViewById(R.id.checkBox);
 
+        if(task.getCompleted()==1){
+            checkBox.setChecked(true);
+        }
+
         checkBox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (checkBox.isChecked()){
-                    AppDatabase.getInstance(context).taskDao().delete(task);
-                    //refresh
+                    AppDatabase.getInstance(context).taskDao().complete(task.getId());
                 }
             }
         });

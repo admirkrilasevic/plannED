@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.util.List;
@@ -42,9 +43,20 @@ public class ActivityListAdapter extends BaseAdapter {
 
         Activity activity = activityList.get(position);
         TextView itemTitle = convertView.findViewById(R.id.text_title);
-        ImageView image = convertView.findViewById(R.id.image);
-        image.setImageResource(R.drawable.activity);
         itemTitle.setText(activity.getTitle());
+        ProgressBar progressBar = convertView.findViewById(R.id.progressBar);
+        TextView progressValue = convertView.findViewById(R.id.progress_value);
+        int noOfTasks = AppDatabase.getInstance(context).taskDao().getTasksForActivity(activity.getId()).size();
+        int completedTasks = AppDatabase.getInstance(context).taskDao().getCompletedTasks().size();
+        if (completedTasks>0){
+            activity.setProgress(completedTasks/noOfTasks*100);
+        }
+        else{
+            activity.setProgress(0);
+        }
+        String progress = String.valueOf(activity.getProgress());
+        progressValue.setText(progress);
+        progressBar.setProgress(activity.getProgress());
 
         return convertView;
     }

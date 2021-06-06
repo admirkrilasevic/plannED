@@ -36,6 +36,13 @@ public interface TaskDao {
 
     @Query("SELECT * FROM tasks WHERE deadlineDate=:date")
     List<Task> getTasksByDate(String date);
+
+    @Query("SELECT * FROM tasks WHERE completed=1")
+    List<Task> getCompletedTasks();
+
+    @Query("UPDATE tasks SET completed = 1 WHERE id=:id")
+    void complete(long id);
+
     @Delete
     void delete(Task task);
 }
