@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.planned">
+    <uses-permission android:name = "android.permission.VIBRATE" />
+    <uses-permission android:name = "android.permission.RECEIVE_BOOT_COMPLETED" />
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="plannED"
+        android:roundIcon="@drawable/icon"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.FragmentLab">
+        <activity android:name="com.example.planned.TaskDetails">
+
+        </activity>
+        <activity android:name="com.example.planned.TaskActivity">
+
+        </activity>
+        <activity android:name="com.example.planned.ActivityDetails" />
+        <activity android:name="com.example.planned.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name=".ReminderBroadcast"/>
+    </application>
+
+</manifest>
